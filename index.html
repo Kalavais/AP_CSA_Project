@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,33 +9,45 @@
     <style>
         body {
             background-color: Cornsilk;
-          
-        }
-
-        font[size="5"] {
-          
-        }
-
-        @media only screen and (max-width: 600px) {
-            font[size="5"] {
-           
-            }
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
         }
 
         img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
+            display: block;
         }
 
-        p {
-            font-size: 2em;
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             color: white;
+            font-size: 2em;
             font-weight: bold;
             text-align: center;
         }
@@ -43,27 +55,25 @@
 </head>
 
 <body>
-    <div class="container">
-        <font size="12"><i>- Sai Nithya Customs -</i></font>
-        <span> - </span>
-        <span> - </span>
-        <font size="12"><i><a href="gallery.html">gallery</a></i></font>
-        <span> - </span>
-        <font size="12"><span><a href="services.html">services</a></span></font>
-        <span> - </span>
-        <font size="12"><span><a href="price.html">price</a></span></font>
-        <span> - </span>
-        <font size="12"><span><a href="contact.html">contact</a></span></font>
-        <span> - </span>
-        <font size="12"><span><a href="policy.html">policy</a></span></font>
-        <span> - </span>
-        <font size="12"><span><a href="about.html">about</a></span></font>
-        <span> - </span>
-    </div>
+    <nav>
+        <div class="container">
+            <a href="#">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="services.html">Services</a>
+            <a href="price.html">Price</a>
+            <a href="contact.html">Contact</a>
+            <a href="policy.html">Policy</a>
+            <a href="about.html">About</a>
+        </div>
+    </nav>
 
-    <div style="position: relative;" class="container">
-        <img src="https://wallpapercave.com/wp/wp8742312.jpg" height="750" width="100%">
-        <p style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">Customization at Your Fingertips</p>
+    <div class="container">
+        <h1>Sai Nithya Customs</h1>
+
+        <div style="position: relative;">
+            <img src="https://wallpapercave.com/wp/wp8742312.jpg" alt="Customization at Your Fingertips">
+            <p class="hero-text">Customization at Your Fingertips</p>
+        </div>
     </div>
 </body>
 
