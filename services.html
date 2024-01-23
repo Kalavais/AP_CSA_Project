@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,10 +10,9 @@
         body {
             background-color: Cornsilk;
             font-size: 16px;
-        }
-
-        font[size="4"] {
-            font-size: 4px;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         @media only screen and (max-width: 600px) {
@@ -26,52 +25,66 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
         }
 
         img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
+            display: block;
+            margin-top: 20px;
+        }
+
+        h3 {
+            text-align: left;
+            margin-top: 20px;
         }
 
         p {
             font-size: 1em;
             color: black;
-        }
-
-        h2 {
-            width: 100%;
-            max-width: 1470px;
-            margin: 0 auto;
-            text-align: center;
-            position: sticky;
-            top: 0;
-        }
-
-        h3 {
-            text-align: left;
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <p style="float: center;"><a href="index.html">&#60;Home&#62;</font></a></p>
-        <h2 class="sticky-div">
-            <p style="float: left;"><a href="gallery.html">&#60;gallery</font></a></p>
-            <p style="float: right;"><a href="price.html">price&#62;</font></a></p>
-        </h2>
-        <br>
-        <br>
-        <div>
-            <h3>
-                <p><font size="6"><b>Services</b></font></p>
-                <p><i><font size="6"><b>Sai Nithya</b></font></i></p>
-            </h3>
+    <nav>
+        <div class="container">
+            <a href="index.html">&#60;Home&#62;</a>
+            <a href="gallery.html">&#60;Gallery</a>
+            <a href="price.html">Price&#62;</a>
         </div>
-        <img src="https://www.southernliving.com/thmb/D2JswT13Im-Ih0zaL8aUFDnMX2w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/everything-you-need-to-know-about-getting-gel-manicures-71943b6141f747f8b5d07b575da67fed">
+    </nav>
+
+    <div class="container">
+        <h3>
+            <font size="6"><b>Services</b></font><br>
+            <i><font size="6"><b>Sai Nithya</b></font></i>
+        </h3>
+
+        <img src="https://www.southernliving.com/thmb/D2JswT13Im-Ih0zaL8aUFDnMX2w=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/everything-you-need-to-know-about-getting-gel-manicures-71943b6141f747f8b5d07b575da67fed" alt="Pedicure Image">
+
         <p><font size="5">
-            A pedicure is a specialized beauty treatment that focuses on the care and pampering of the feet and toenails. This indulgent service typically takes place in a salon or spa, where trained professionals provide expert care to enhance the overall health and appearance of the feet. A typical pedicure involves soaking the feet in warm water to soften the skin and nails, followed by the gentle exfoliation of dead skin cells. The technician will then trim and shape the toenails, address cuticles, and moisturize the feet to promote softness and hydration. Some pedicures may also include a relaxing foot massage to alleviate tension and improve circulation. The final touch often involves the application of nail polish, adding a stylish and polished finish to the toenails. Overall, a pedicure goes beyond aesthetic benefits, offering a rejuvenating experience that contributes to both foot health and overall well-being.
+            A pedicure is a specialized beauty treatment that focuses on the care and pampering of the feet and toenails... [Your pedicure description]
         </font></p>
+
+        <p><font size="5">For more information about pedicures, <a href="https://en.wikipedia.org/wiki/Pedicure#:~:text=Regular%20pedicure%3A%20A%20simple%20treatment,massage%2C%20moisturizer%20and%20nail%20polishing." target="_blank">Click Here</a></font></p>
     </div>
-    <left>
-        <p><font size="5">For what is a pedicure <a href="https://en.wikipedia.org/wiki/Pedicure#:~:text=Regular%20pedicure%3A%20A%20simple%20treatment,massage%2C%20moisturizer%20and%20nail%20polishing."  target="_blank">Click Here
+</body>
+
+</html>
