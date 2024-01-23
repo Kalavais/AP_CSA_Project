@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,10 +10,9 @@
         body {
             background-color: Cornsilk;
             font-size: 16px;
-        }
-
-        font[size="4"] {
-            font-size: 4px;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         @media only screen and (max-width: 600px) {
@@ -26,57 +25,64 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
         }
 
         img {
-            max-width: 100%;
+            width: 100%;
             height: auto;
+            display: block;
+            margin-top: 20px;
+        }
+
+        h3 {
+            text-align: left;
+            margin-top: 20px;
         }
 
         p {
             font-size: 1em;
             color: black;
-        }
-
-        h2 {
-            width: 100%;
-            max-width: 1470px;
-            margin: 0 auto;
-            text-align: center;
-            position: sticky;
-            top: 0;
-        }
-
-        h3 {
-            text-align: left;
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
-    <h2 class="sticky-div">
-        <p style="float: left;"><a href="index.html">&#60;Home</font></a></p>
-        <p style="float: right;"><a href="services.html">Services&#62;</font></a></p>
-    </h2>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div>
-        <h3 align="left">
-            <p><font size="6"><b>some of my gallery from clients</b></font></p>
-            <p><i><font size="6"><b>Sai Nithya</b></font></i></p>
+    <nav>
+        <div class="container">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            
+        </div>
+    </nav>
+
+    <div class="container">
+        <h3>
+            <b>Gallery</b><br>
+            <i>Sai Nithya</i>
         </h3>
-    </div>
-    <img src="https://lh3.googleusercontent.com/p/AF1QipNtSnarp0V4p5l7uCfl5zKUou80mSCDHSiUG-Wp=w1080-h608-p-no-v0">
-    <div>
-        <p><font size="5"><b>Period:</b> 2023<br><b>Type:</b> French tip etc<br><b></font></p>
-        <p><font size="5">These are just some of the many stunning designs that were created by Sai Nithya Kalavai. Stay tuned for many more.</font></p>
-    </div>
-    <left>
-        <p><font size="5">For more from Sai Nithya: <a href="https://www.instagram.com/sigh_n1thya/" target="_blank">Click Here</a></font></p>
-    </left>
+
+        <img src="https://lh3.googleusercontent.com/p/AF1QipNtSnarp0V4p5l7uCfl5zKUou80mSCDHSiUG-Wp=w1080-h608-p-no-v0">
+        <p style="font-size: 1.2em;">
+            These are just some of the many stunning designs that were created by Sai Nithya Kalavai. Stay tuned for many more.</font></p>
+        </p>
+
+        <p style="font-size: 1.2em;">More from sai nithya, <a href="https://www.instagram.com/sigh_n1thya/" target="_blank">Click Here</a></font></p>
 </body>
 
 </html>
-
