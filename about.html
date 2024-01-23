@@ -5,60 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sai Nithya Customs</title>
-    <link rel="stylesheet" href="styles.css">
+
     <style>
-        .text-container {
-            max-width: 100%;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-
-        .text-container img {
-            max-width: 100%;
-            height: auto;
-            float: left;
-            margin-right: 20px;
-            margin-bottom: 10px;
-        }
-
-        .text-container h3 {
-            text-align: left;
-        }
-
-        .text-container p {
-            font-size: 1em;
-            color: black;
+        body {
+            background-color: Cornsilk;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         @media only screen and (max-width: 600px) {
-            .text-container img {
-                float: none;
-                margin-right: 0;
+            font[size="4"] {
+                font-size: 3px;
             }
+        }
 
-            .text-container p {
-                float: none;
-                width: 100%;
-            }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        nav {
+            text-align: center;
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+        }
+
+        h3 {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 1em;
+            color: black;
+            margin-top: 10px;
         }
     </style>
 </head>
 
 <body>
+    <nav>
+        <div class="container">
+            <a href="index.html">Home</a>
+           
+            
+        </div>
+    </nav>
+
     <div class="container">
-        <p class="center"><a href="index.html">&lt;Home&gt;</a></p>
-        <h2 class="sticky-div">
-            <p class="left"><a href="policy.html">&lt;About</a></p>
-        </h2>
-        <br>
-        <br>
-        <div class="text-container">
-            <img src="https://bloximages.chicago2.vip.townnews.com/wilsonvillespokesman.com/content/tncms/assets/v3/editorial/7/2a/72a2030f-aac4-5d36-b854-bc9af64ff658/638663ee6ba6c.image.jpg?resize=200%2C136">
-            <h3>
-                <p><span class="font-size-6"><b>Policy</b></span></p>
-                <p><i><span class="font-size-6"><b>Sai Nithya</b></span></i></p>
-            </h3>
-            <p><span class="font-size-5">About me: I have three years of experience working as a Nail Technician, providing the highest
+        <h3>
+            <b>About ME</b><br>
+            <i>Sai Nithya</i>
+        </h3>
+
+        <img src="https://bloximages.chicago2.vip.townnews.com/wilsonvillespokesman.com/content/tncms/assets/v3/editorial/7/2a/72a2030f-aac4-5d36-b854-bc9af64ff658/638663ee6ba6c.image.jpg?resize=200%2C136">
+        <p style="font-size: 1.2em;">
+            >About me: I have three years of experience working as a Nail Technician, providing the highest
                     quality of service for my clients. I have extensive knowledge of nail care, as well as the latest
                     trends in nail art and design. My experience also includes working with a variety of techniques,
                     from gel and acrylic nails to nail sculpting and 3D art. As a professional, I am committed to
@@ -70,11 +91,9 @@
                     to delivering outstanding customer service, and I am always looking for ways to improve the salon
                     experience for my clients. I would love the opportunity to discuss my qualifications further in
                     person.</font></p></span></p>
-        </div>
-        <left>
-            <p><span class="font-size-5">Here is my current Instagram <a href="https://www.instagram.com/sigh_n1thya/" target="_blank">Click Here</a></span></p>
-        </left>
-    </div>
+        </p>
+
+        <p style="font-size: 1.2em;"> Here is my insta <a href="https://www.instagram.com/sigh_n1thya/" target="_blank">Click Here</a></font></p>
 </body>
 
 </html>
