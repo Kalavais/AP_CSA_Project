@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,12 +8,11 @@
 
     <style>
         body {
-            background-color: Cornsilk;
+            background-color: #FFF8DC;
             font-size: 16px;
-        }
-
-        font[size="4"] {
-            font-size: 4px;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
         }
 
         @media only screen and (max-width: 600px) {
@@ -26,16 +25,8 @@
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        p {
-            font-size: 1em;
-            color: black;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         h2 {
@@ -45,37 +36,62 @@
             text-align: center;
             position: sticky;
             top: 0;
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
         }
 
         h3 {
             text-align: left;
+            margin-top: 20px;
+            color: #333;
+        }
+
+        p {
+            font-size: 1em;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <p style="float: center;"><a href="index.html">&#60;Home&#62;</font></a></p>
+        <p style="text-align: center;"><a href="index.html">Home</a></p>
         <h2 class="sticky-div">
-            <p style="float: left;"><a href="services.html">&#60;services</font></a></p>
-            <p style="float: right;"><a href="contact.html">contact&#62;</font></a></p>
+            <p style="float: left;"><a href="services.html">Services</a></p>
+            <p style="float: right;"><a href="contact.html">Contact</a></p>
         </h2>
         <br>
         <br>
         <div>
             <h3>
-                <p><font size="6"><b>Price</b></font></p>
-                <p><i><font size="6"><b>Sai Nithya</b></font></i></p>
+                <b>Price</b><br>
+                <i>Sai Nithya</i>
             </h3>
         </div>
-        <img src="https://zolmi.com/assets/components/phpthumbof/cache/nail-salon-price-list.2f51107709200ff2359af6031c3bacde.png">
-        <p><font size="5">
-            Shown above are some of our company's policies for many of the services that we offer. If you have any more questions, feel free to contact me via my Instagram, which is listed below, or feel free to contact me via xxx-xxx-xxxx. (<mark>All of our prices are firm</mark>. <s>there are some counts that may be gained via membership.</s>
-        </font></p>
+        <img src="https://zolmi.com/assets/components/phpthumbof/cache/nail-salon-price-list.2f51107709200ff2359af6031c3bacde.png" alt="Price List Image">
+        <p style="font-size: 1.2em;">
+            Shown above are some of our company's policies for many of the services that we offer. If you have any more questions, feel free to contact me via my Instagram, which is listed below, or feel free to contact me via xxx-xxx-xxxx. (<mark>All of our prices are firm</mark>. <s>there are some counts that may be gained via membership.</s>)
+        </p>
     </div>
-    <left>
-        <p><font size="5">For more on our pricing <a href="https://www.instagram.com/sigh_n1thya/" target="_blank">Click Here</font></a></p>
-    </left>
+    <p style="text-align: center;"><a href="https://www.instagram.com/sigh_n1thya/" target="_blank">For more on our pricing, Click Here</a></p>
 </body>
 
 </html>
