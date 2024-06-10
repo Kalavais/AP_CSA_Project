@@ -1,4 +1,4 @@
-let answer = "tapir";
+let answer = "tapir"; // Change back to "tapir"
 let currentRow = 0;
 let currentTile = 0;
 let gameActive = true;
@@ -39,22 +39,22 @@ function handleKeyPress(key) {
 function handleEnterPress() {
     if (!gameActive || currentTile < 5) return;
     const tiles = Array.from(board.querySelectorAll(".tile"));
-    const guess = tiles.map((tile) => tile.textContent).join("");
+    const guess = tiles.map((tile) => tile.textContent.toUpperCase()).join("");
     
     const correctLetters = [...new Set(answer)].filter(letter => guess.includes(letter));
     const correctPositions = answer.split("").filter((letter, index) => guess[index] === letter);
 
     tiles.forEach((tile, index) => {
-        if (correctPositions.includes(tile.textContent)) {
+        if (correctPositions.includes(tile.textContent.toUpperCase())) {
             tile.classList.add("correct");
-        } else if (correctLetters.includes(tile.textContent)) {
+        } else if (correctLetters.includes(tile.textContent.toUpperCase())) {
             tile.classList.add("present");
         } else {
             tile.classList.add("absent");
         }
     });
 
-    if (guess === answer) {
+    if (guess === answer.toUpperCase()) {
         displayMessage("Congratulations! You guessed the word!");
         gameActive = false;
         restartButton.style.display = "block";
@@ -75,6 +75,7 @@ function displayMessage(msg) {
 }
 
 function restartGame() {
+    answer = "tapir"; // Reset back to "tapir"
     currentRow = 0;
     currentTile = 0;
     gameActive = true;
