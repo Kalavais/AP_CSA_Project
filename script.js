@@ -61,9 +61,7 @@ function handleEnterPress() {
     for (let i = 0; i < 5; i++) {
         const tile = document.getElementById(`tile-${currentRow * 5 + i}`);
         const key = tile.textContent.toLowerCase(); // Convert input to lowercase for comparison
-        if (answer[i] === key) {
-            tile.classList.add("correct");
-        } else if (answer.includes(key)) {
+        if (answer.includes(key)) {
             tile.classList.add("present");
         } else {
             tile.classList.add("absent");
