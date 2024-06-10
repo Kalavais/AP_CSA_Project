@@ -1,9 +1,7 @@
-
-let answer = ["tapir"];
+let answer = "tapir";
 let currentRow = 0;
 let currentTile = 0;
 let gameActive = true;
-
 
 const board = document.getElementById("board");
 const keyboard = document.getElementById("keyboard");
@@ -11,10 +9,10 @@ const message = document.getElementById("message");
 const restartButton = document.getElementById("restart");
 
 function createBoard() {
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 5; i++) {
         const tile = document.createElement("div");
         tile.classList.add("tile");
-        tile.setAttribute("id", `tile-${i}`);
+        tile.setAttribute("data-index", i);
         board.appendChild(tile);
     }
 }
@@ -29,63 +27,37 @@ function createKeyboard() {
         keyButton.addEventListener("click", () => handleKeyPress(key));
         keyboard.appendChild(keyButton);
     });
-
-    const enterButton = document.createElement("button");
-    enterButton.textContent = "Enter";
-    enterButton.classList.add("key", "wide");
-    enterButton.addEventListener("click", handleEnterPress);
-    keyboard.appendChild(enterButton);
-
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Del";
-    deleteButton.classList.add("key", "wide");
-    deleteButton.addEventListener("click", handleDeletePress);
-    keyboard.appendChild(deleteButton);
 }
 
 function handleKeyPress(key) {
     if (!gameActive || currentTile >= 5) return;
-    const tile = document.getElementById(`tile-${currentRow * 5 + currentTile}`);
-    tile.textContent = key;
+    const tile = board.querySelector(`[data-index="${currentTile}"]`);
+    tile.textContent = key.toUpperCase();
     currentTile++;
-}
-
-function handleDeletePress() {
-    if (!gameActive || currentTile === 0) return;
-    currentTile--;
-    const tile = document.getElementById(`tile-${currentRow * 5 + currentTile}`);
-    tile.textContent = "";
 }
 
 function handleEnterPress() {
     if (!gameActive || currentTile < 5) return;
-    const guess = [];
-    for (let i = 0; i < 5; i++) {
-        guess.push(document.getElementById(`tile-${currentRow * 5 + i}`).textContent);
-    }
-    const guessWord = guess.join("");
+    const tiles = Array.from(board.querySelectorAll(".tile"));
+    const guess = tiles.map((tile) => tile.textContent).join("");
+    
+    const correctLetters = [...new Set(answer)].filter(letter => guess.includes(letter));
+    const correctPositions = answer.split("").filter((letter, index) => guess[index] === letter);
 
-    for (let i = 0; i < 5; i++) {
-        const tile = document.getElementById(`tile-${currentRow * 5 + i}`);
-        const key = tile.textContent;
-        const keyButton = document.querySelector(`button[data-key="${key}"]`);
-        if (answer[i] === key) {
+    tiles.forEach((tile, index) => {
+        if (correctPositions.includes(tile.textContent)) {
             tile.classList.add("correct");
-            keyButton.classList.add("correct");
-        } else if (answer.includes(key)) {
+        } else if (correctLetters.includes(tile.textContent)) {
             tile.classList.add("present");
-            keyButton.classList.add("present");
         } else {
             tile.classList.add("absent");
-            keyButton.classList.add("absent");
         }
-    }
+    });
 
-    if (guessWord === answer) {
+    if (guess === answer) {
         displayMessage("Congratulations! You guessed the word!");
         gameActive = false;
         restartButton.style.display = "block";
-        return;
     }
 
     currentRow++;
@@ -103,19 +75,16 @@ function displayMessage(msg) {
 }
 
 function restartGame() {
-    answer = "tapir";
     currentRow = 0;
     currentTile = 0;
     gameActive = true;
     message.textContent = "";
     restartButton.style.display = "none";
-    for (let i = 0; i < 30; i++) {
-        const tile = document.getElementById(`tile-${i}`);
+    const tiles = board.querySelectorAll(".tile");
+    tiles.forEach((tile) => {
         tile.textContent = "";
         tile.classList.remove("correct", "present", "absent");
-    }
-    const keys = document.querySelectorAll(".key");
-    keys.forEach((key) => key.classList.remove("correct", "present", "absent"));
+    });
 }
 
 createBoard();
@@ -125,8 +94,6 @@ document.addEventListener("keydown", (e) => {
     if (!gameActive) return;
     if (e.key === "Enter") {
         handleEnterPress();
-    } else if (e.key === "Backspace") {
-        handleDeletePress();
     } else if (e.key.match(/^[a-z]$/) && e.key.length === 1) {
         handleKeyPress(e.key);
     }
