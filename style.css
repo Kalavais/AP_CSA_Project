@@ -36,7 +36,7 @@ body {
     background-color: #e6e6e6; /* Light gray background for tiles */
     color: #333;
     border-radius: 50%; /* Circular shape for tiles */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
 .keyboard {
@@ -67,17 +67,14 @@ body {
 
 .correct {
     background-color: #68c24d; /* Green for correct letters */
-    color: #fff; /* White text color for correct letters */
 }
 
 .present {
     background-color: #fbbf49; /* Yellow for present but in wrong position */
-    color: #333; /* Dark text color for present letters */
 }
 
 .absent {
     background-color: #ff0033; /* Red for absent letters */
-    color: #fff; /* White text color for absent letters */
 }
 
 .message {
@@ -99,3 +96,4 @@ body {
 .restart-btn:hover {
     background-color: #444;
 }
+
