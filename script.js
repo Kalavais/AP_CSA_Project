@@ -1,4 +1,4 @@
-const words = const words = [
+const words = [
   "apple", "happy", "house", "plant", "water",
   "chair", "smile", "bread", "earth", "fruit",
   "music", "dance", "laugh", "glass", "table",
