@@ -1,34 +1,5 @@
-const answer = [
-  "abide", "admit", "adopt", "adult", "agent", "alarm", "album", "alert", "allow", "alone",
-  "along", "alter", "amend", "ample", "angel", "anger", "angle", "annex", "apple", "argue",
-  "arise", "armed", "aroma", "arrow", "aspen", "asset", "avoid", "bacon", "badge", "bagel",
-  "baker", "banjo", "basic", "beach", "beast", "begin", "being", "belly", "berry", "bible",
-  "birth", "black", "blade", "blame", "bless", "blind", "block", "bloom", "blood", "board",
-  "boast", "bonus", "booth", "brain", "brass", "brave", "bread", "break", "breed", "bring",
-  "broad", "brown", "brush", "buddy", "build", "burst", "cabin", "cable", "camel", "candy",
-  "canon", "cargo", "carve", "catch", "cedar", "chain", "chair", "chalk", "charm", "chart",
-  "chase", "cheap", "cheat", "check", "cheer", "chess", "chief", "child", "chill", "china",
-  "choir", "chose", "cigar", "claim", "class", "clean", "clear", "clerk", "click", "clock",
-  "close", "coach", "coast", "color", "couch", "could", "count", "court", "cover", "crack",
-  "craft", "crane", "crash", "crazy", "cream", "creek", "crime", "crisp", "crowd", "crown",
-  "cruel", "crush", "curve", "daily", "dance", "death", "debit", "debut", "decal", "decay",
-  "decor", "delay", "demon", "depot", "depth", "derby", "devil", "diary", "diner", "dirty",
-  "ditch", "dizzy", "donor", "doubt", "draft", "drain", "drama", "dream", "dress", "drill",
-  "drink", "drive", "drown", "dutch", "eager", "early", "earth", "eight", "elbow", "elder",
-  "elect", "elite", "empty", "enemy", "enjoy", "enter", "entry", "equal", "error", "essay",
-  "event", "every", "exact", "exile", "exist", "extra", "faith", "fault", "favor", "feast",
-  "fence", "fetch", "fiber", "field", "fifth", "fifty", "fight", "final", "first", "flame",
-  "flank", "flash", "fleet", "flesh", "float", "flood", "flour", "focus", "force", "forge",
-  "forth", "forty", "forum", "found", "frame", "fraud", "fresh", "front", "frost", "fruit",
-  "funds", "funny", "gauge", "ghost", "giant", "given", "globe", "glory", "grace", "grade",
-  "grain", "grand", "grant", "grape", "grass", "grave", "great", "green", "greet", "grief",
-  "gross", "group", "guard", "guess", "guest", "guide", "happy", "harsh", "heart", "heavy",
-  "honey", "horse", "hotel", "house", "human", "humor", "ideal", "image", "index", "inner",
-  "input", "intro", "issue", "jeans", "joint", "judge", "juice", "knife", "knock", "known",
-  "label", "labor", "large", "laser", "later", "laugh", "layer", "learn", "lease", "least",
-  "leave", "legal", "level", "lever", "light", "limit", "local", "lodge", "logic", "loose",
-  "lucky", "lunar", "
- // You can change this to any 5-letter word you want.
+const words = ["apple", "grape", "melon", "berry", "lemon"];
+const answer = words[Math.floor(Math.random() * words.length)];
 let currentRow = 0;
 let currentTile = 0;
 let gameActive = true;
@@ -90,8 +61,11 @@ function handleEnterPress() {
         guess.push(document.getElementById(`tile-${currentRow * 5 + i}`).textContent);
     }
     const guessWord = guess.join("");
+    if (!words.includes(guessWord)) {
+        alert("Invalid word!");
+        return;
+    }
 
-    // Remove validation of guessWord
     for (let i = 0; i < 5; i++) {
         const tile = document.getElementById(`tile-${currentRow * 5 + i}`);
         const key = tile.textContent;
