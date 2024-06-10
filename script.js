@@ -1,5 +1,5 @@
-const wordlist = ["tapir","saute","soare","audit","proxy","manga"];
-let answer = Math.floor(Math.random() * wordlist.length);
+
+let answer = ["tapir"];
 let currentRow = 0;
 let currentTile = 0;
 let gameActive = true;
