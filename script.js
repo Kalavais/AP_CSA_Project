@@ -42,4 +42,12 @@ function displayFeedback(result) {
         .split("")
         .map(letter => `<span class="${letter === "G" ? "green" : letter === "Y" ? "yellow" : "red"}">${letter}</span>`)
         .join(" ");
+    
+    const wordGrid = document.getElementById("wordGrid");
+    const wordBlocks = wordGrid.querySelectorAll(".word-block");
+
+    for (let i = 0; i < result.length; i++) {
+        const color = result[i] === "G" ? "green" : result[i] === "Y" ? "yellow" : "red";
+        wordBlocks[i].style.backgroundColor = color;
+    }
 }
