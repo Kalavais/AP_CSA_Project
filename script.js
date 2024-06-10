@@ -16,7 +16,7 @@ function createBoard() {
 }
 
 function createKeyboard() {
-    const keys = "qwertyuiopasdfghjklzxcvbnm";
+    const keys = "abcdefghijklmnopqrstuvwxyz";
     keys.split("").forEach((key) => {
         const keyButton = document.createElement("button");
         keyButton.textContent = key;
@@ -42,7 +42,7 @@ function createKeyboard() {
 function handleKeyPress(key) {
     if (!gameActive || currentTile >= 5) return;
     const tile = document.getElementById(`tile-${currentRow * 5 + currentTile}`);
-    tile.textContent = key;
+    tile.textContent = key.toUpperCase(); // Convert input to uppercase for consistency
     currentTile++;
 }
 
@@ -56,34 +56,30 @@ function handleDeletePress() {
 function handleEnterPress() {
     if (!gameActive || currentTile < 5) return;
 
-    // Code to check the correctness of the guess and update the game board
+    const guessWord = Array.from({ length: 5 }, (_, i) => document.getElementById(`tile-${currentRow * 5 + i}`).textContent.toLowerCase()).join("");
+
     for (let i = 0; i < 5; i++) {
         const tile = document.getElementById(`tile-${currentRow * 5 + i}`);
-        const key = tile.textContent;
-        if (answer[i] === key) {
-            tile.classList.add("correct");
-        } else if (answer.includes(key)) {
+        const key = tile.textContent.toLowerCase(); // Convert input to lowercase for comparison
+        if (answer.includes(key)) {
             tile.classList.add("present");
         } else {
             tile.classList.add("absent");
         }
     }
 
-    if (currentTile === 5) {
-        const guessWord = Array.from({ length: 5 }, (_, i) => document.getElementById(`tile-${currentRow * 5 + i}`).textContent).join("");
-        if (guessWord === answer) {
-            alert("Congratulations! You guessed the word!");
-            gameActive = false;
-            return;
-        }
+    if (guessWord === answer) {
+        alert("Congratulations! You guessed the word!");
+        gameActive = false;
+        return;
+    }
 
-        currentRow++;
-        currentTile = 0;
+    currentRow++;
+    currentTile = 0;
 
-        if (currentRow >= 6) {
-            alert(`Game over! The word was: ${answer}`);
-            gameActive = false;
-        }
+    if (currentRow >= 6) {
+        alert(`Game over! The word was: ${answer}`);
+        gameActive = false;
     }
 }
 
