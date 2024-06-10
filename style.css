@@ -15,12 +15,11 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
-    max-width: 500px; /* Limit container width for responsiveness */
 }
 
 .board {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Flexible width for tiles */
+    grid-template-columns: repeat(5, 60px); /* Fixed width for tiles */
     gap: 10px;
     margin-bottom: 20px;
 }
@@ -36,13 +35,8 @@ body {
     text-transform: uppercase;
     background-color: #e6e6e6; /* Light gray background for tiles */
     color: #333;
-    border-radius: 10px; /* Slightly rounded corners for tiles */
-    cursor: pointer; /* Change cursor to pointer on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
-
-.tile:focus {
-    outline: none; /* Remove outline on focus for better aesthetics */
+    border-radius: 50%; /* Circular shape for tiles */
+    transition: border-color 0.3s ease; /* Smooth transition for border color */
 }
 
 .keyboard {
@@ -63,7 +57,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 10px; /* Slightly rounded corners for buttons */
+    border-radius: 50%; /* Circular shape for buttons */
     transition: background-color 0.3s ease; /* Smooth transition for background color */
 }
 
@@ -73,21 +67,32 @@ body {
 
 .correct {
     background-color: #68c24d; /* Green for correct letters */
-    color: #fff; /* White text color for correct letters */
 }
 
 .present {
     background-color: #fbbf49; /* Yellow for present but in wrong position */
-    color: #333; /* Dark text color for present letters */
 }
 
 .absent {
     background-color: #ff0033; /* Red for absent letters */
-    color: #fff; /* White text color for absent letters */
 }
 
 .message {
     margin-bottom: 20px;
     font-size: 20px;
     font-weight: bold;
+}
+
+.restart-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.restart-btn:hover {
+    background-color: #444;
 }
