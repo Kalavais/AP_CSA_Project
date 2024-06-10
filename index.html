@@ -10,9 +10,18 @@
 <div class="container">
     <h1>Welcome to Wordle!</h1>
     <p>Guess the word "tapir".</p>
+    <div class="word-grid" id="wordGrid">
+        <div class="word-row">
+            <div class="word-block"></div>
+            <div class="word-block"></div>
+            <div class="word-block"></div>
+            <div class="word-block"></div>
+            <div class="word-block"></div>
+        </div>
+    </div>
     <input type="text" id="guessInput" maxlength="5">
     <button onclick="checkGuess()">Guess</button>
-    <div id="feedback"></div>
+    <div id="feedback" class="feedback"></div>
 </div>
 <script src="script.js"></script>
 </body>
