@@ -58,16 +58,16 @@ body {
 }
 
 .correct {
-    background-color: #008000 !important;
+    background-color: #6aaa64 !important;
     color: #fff; /* Set text color to white for visibility */
 }
 
 .present {
-    background-color: #c9b458 !important;
+    background-color: #ffdb58 !important; /* Change to yellow */
     color: #000; /* Set text color to black for visibility */
 }
 
 .absent {
-    background-color: #ff4646 !important;
+    background-color: #ff4646 !important; /* Red for incorrect letters */
     color: #fff; /* Set text color to white for visibility */
 }
