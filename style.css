@@ -16,7 +16,7 @@ body {
 .board {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 2px; /* Reduced gap between the tiles */
+    gap: 5px;
     margin-bottom: 20px;
 }
 
@@ -59,15 +59,12 @@ body {
 
 .correct {
     background-color: #6aaa64 !important;
-    color: #fff; /* Set text color to white for visibility */
 }
 
 .present {
-    background-color: #ffdb58 !important; /* Yellow for correct letters in the wrong position */
-    color: #000; /* Set text color to black for visibility */
+    background-color: #c9b458 !important;
 }
 
 .absent {
-    background-color: #ff4646 !important; /* Red for incorrect letters */
-    color: #fff; /* Set text color to white for visibility */
+    background-color: #3a3a3c !important;
 }
