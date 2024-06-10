@@ -16,7 +16,7 @@ body {
 .board {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 5px;
+    gap: 2px; /* Reduced gap between the tiles */
     margin-bottom: 20px;
 }
 
