@@ -1,5 +1,5 @@
 
-let answer = ["tapir"];
+let answer = "tapir";
 let currentRow = 0;
 let currentTile = 0;
 let gameActive = true;
