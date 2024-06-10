@@ -1,7 +1,9 @@
-let answer = "tapir";
+const wordlist = ["tapir","saute","soare","audit","proxy","manga"];
+let answer = Math.floor(Math.random() * wordlist.length);
 let currentRow = 0;
 let currentTile = 0;
 let gameActive = true;
+
 
 const board = document.getElementById("board");
 const keyboard = document.getElementById("keyboard");
