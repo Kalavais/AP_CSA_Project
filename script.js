@@ -1,19 +1,10 @@
-const answer = ["saute"];
+const answer = "saute"; // The answer is always "saute"
 let currentRow = 0;
 let currentTile = 0;
 let gameActive = true;
 
 const board = document.getElementById("board");
 const keyboard = document.getElementById("keyboard");
-
-function generateRandomWord(length) {
-    const characters = "abcdefghijklmnopqrstuvwxyz";
-    let randomWord = "";
-    for (let i = 0; i < length; i++) {
-        randomWord += characters.charAt(Math.floor(Math.random() * characters.length));
-    }
-    return randomWord;
-}
 
 function createBoard() {
     for (let i = 0; i < 30; i++) {
@@ -64,12 +55,8 @@ function handleDeletePress() {
 
 function handleEnterPress() {
     if (!gameActive || currentTile < 5) return;
-    const guess = [];
-    for (let i = 0; i < 5; i++) {
-        guess.push(document.getElementById(`tile-${currentRow * 5 + i}`).textContent);
-    }
-    const guessWord = guess.join("");
 
+    // Code to check the correctness of the guess and update the game board
     for (let i = 0; i < 5; i++) {
         const tile = document.getElementById(`tile-${currentRow * 5 + i}`);
         const key = tile.textContent;
@@ -82,18 +69,21 @@ function handleEnterPress() {
         }
     }
 
-    if (guessWord === answer) {
-        alert("Congratulations! You guessed the word!");
-        gameActive = false;
-        return;
-    }
+    if (currentTile === 5) {
+        const guessWord = Array.from({ length: 5 }, (_, i) => document.getElementById(`tile-${currentRow * 5 + i}`).textContent).join("");
+        if (guessWord === answer) {
+            alert("Congratulations! You guessed the word!");
+            gameActive = false;
+            return;
+        }
 
-    currentRow++;
-    currentTile = 0;
+        currentRow++;
+        currentTile = 0;
 
-    if (currentRow >= 6) {
-        alert(`Game over! The word was: ${answer}`);
-        gameActive = false;
+        if (currentRow >= 6) {
+            alert(`Game over! The word was: ${answer}`);
+            gameActive = false;
+        }
     }
 }
 
