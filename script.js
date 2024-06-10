@@ -1,5 +1,4 @@
-const words = ["tapir"];
-
+const words = ["apple", "grape", "melon", "berry", "lemon"];
 const answer = words[Math.floor(Math.random() * words.length)];
 let currentRow = 0;
 let currentTile = 0;
