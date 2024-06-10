@@ -1,5 +1,4 @@
-const words =
-["tapir"];
+const words = ["tapir"];
 
 const answer = words[Math.floor(Math.random() * words.length)];
 let currentRow = 0;
