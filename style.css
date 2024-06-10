@@ -63,7 +63,7 @@ body {
 }
 
 .present {
-    background-color: #ffdb58 !important; /* Change to yellow */
+    background-color: #ffdb58 !important; /* Yellow for correct letters in the wrong position */
     color: #000; /* Set text color to black for visibility */
 }
 
