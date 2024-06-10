@@ -1,11 +1,19 @@
-const words = ["apple", "grape", "melon", "berry", "lemon"];
-const answer = words[Math.floor(Math.random() * words.length)];
+const answer = ["saute"];
 let currentRow = 0;
 let currentTile = 0;
 let gameActive = true;
 
 const board = document.getElementById("board");
 const keyboard = document.getElementById("keyboard");
+
+function generateRandomWord(length) {
+    const characters = "abcdefghijklmnopqrstuvwxyz";
+    let randomWord = "";
+    for (let i = 0; i < length; i++) {
+        randomWord += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return randomWord;
+}
 
 function createBoard() {
     for (let i = 0; i < 30; i++) {
@@ -60,7 +68,7 @@ function handleEnterPress() {
     for (let i = 0; i < 5; i++) {
         guess.push(document.getElementById(`tile-${currentRow * 5 + i}`).textContent);
     }
-
+    const guessWord = guess.join("");
 
     for (let i = 0; i < 5; i++) {
         const tile = document.getElementById(`tile-${currentRow * 5 + i}`);
