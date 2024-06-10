@@ -1,4 +1,5 @@
-const answer = "saute"; // The answer is always "saute"
+const words = ["apple", "grape", "melon", "berry", "lemon"];
+const answer = words[Math.floor(Math.random() * words.length)];
 let currentRow = 0;
 let currentTile = 0;
 let gameActive = true;
@@ -16,7 +17,7 @@ function createBoard() {
 }
 
 function createKeyboard() {
-    const keys = "abcdefghijklmnopqrstuvwxyz";
+    const keys = "qwertyuiopasdfghjklzxcvbnm";
     keys.split("").forEach((key) => {
         const keyButton = document.createElement("button");
         keyButton.textContent = key;
@@ -42,7 +43,7 @@ function createKeyboard() {
 function handleKeyPress(key) {
     if (!gameActive || currentTile >= 5) return;
     const tile = document.getElementById(`tile-${currentRow * 5 + currentTile}`);
-    tile.textContent = key.toUpperCase(); // Convert input to uppercase for consistency
+    tile.textContent = key;
     currentTile++;
 }
 
@@ -55,13 +56,22 @@ function handleDeletePress() {
 
 function handleEnterPress() {
     if (!gameActive || currentTile < 5) return;
-
-    const guessWord = Array.from({ length: 5 }, (_, i) => document.getElementById(`tile-${currentRow * 5 + i}`).textContent.toLowerCase()).join("");
+    const guess = [];
+    for (let i = 0; i < 5; i++) {
+        guess.push(document.getElementById(`tile-${currentRow * 5 + i}`).textContent);
+    }
+    const guessWord = guess.join("");
+    if (!words.includes(guessWord)) {
+        alert("Invalid word!");
+        return;
+    }
 
     for (let i = 0; i < 5; i++) {
         const tile = document.getElementById(`tile-${currentRow * 5 + i}`);
-        const key = tile.textContent.toLowerCase(); // Convert input to lowercase for comparison
-        if (answer.includes(key)) {
+        const key = tile.textContent;
+        if (answer[i] === key) {
+            tile.classList.add("correct");
+        } else if (answer.includes(key)) {
             tile.classList.add("present");
         } else {
             tile.classList.add("absent");
