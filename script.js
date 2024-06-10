@@ -1,11 +1,5 @@
-let answer = "tapir";
+const answer = "tapir";
 let attempts = 0;
-const maxAttempts = 6;
-
-function handleKey(letter) {
-    const guessInput = document.getElementById("guessInput");
-    guessInput.value += letter.toUpperCase();
-}
 
 function checkGuess() {
     const guessInput = document.getElementById("guessInput");
@@ -21,26 +15,22 @@ function checkGuess() {
     const result = checkGuessWord(answer, guess);
     displayFeedback(result);
 
-    if (result.every(letter => letter === "G")) {
-        setTimeout(() => {
-            alert(`Congratulations! You guessed the word: ${answer}`);
-        }, 100);
-    } else if (attempts >= maxAttempts) {
-        setTimeout(() => {
-            alert(`Out of attempts! The word was: ${answer}`);
-        }, 100);
+    if (result === "GGGGG") {
+        alert(`Congratulations! You guessed the word: ${answer}`);
+    } else if (attempts >= 6) {
+        alert(`Out of attempts! The word was: ${answer}`);
     }
 }
 
 function checkGuessWord(answer, guess) {
-    const result = [];
+    let result = "";
     for (let i = 0; i < answer.length; i++) {
         if (answer[i] === guess[i]) {
-            result.push("G"); // Correct letter and position (Green)
+            result += "G"; // Correct letter and position (Green)
         } else if (answer.includes(guess[i])) {
-            result.push("Y"); // Correct letter but wrong position (Yellow)
+            result += "Y"; // Correct letter but wrong position (Yellow)
         } else {
-            result.push("R"); // Incorrect letter (Red)
+            result += "R"; // Incorrect letter (Red)
         }
     }
     return result;
@@ -49,6 +39,7 @@ function checkGuessWord(answer, guess) {
 function displayFeedback(result) {
     const feedbackDiv = document.getElementById("feedback");
     feedbackDiv.innerHTML = result
+        .split("")
         .map(letter => `<span class="${letter === "G" ? "green" : letter === "Y" ? "yellow" : "red"}">${letter}</span>`)
         .join(" ");
 }
