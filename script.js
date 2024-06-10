@@ -1,12 +1,12 @@
-const words = ["tapir"];
-
-const answer = words[Math.floor(Math.random() * words.length)];
+let answer = "tapir";
 let currentRow = 0;
 let currentTile = 0;
 let gameActive = true;
 
 const board = document.getElementById("board");
 const keyboard = document.getElementById("keyboard");
+const message = document.getElementById("message");
+const restartButton = document.getElementById("restart");
 
 function createBoard() {
     for (let i = 0; i < 30; i++) {
@@ -62,26 +62,27 @@ function handleEnterPress() {
         guess.push(document.getElementById(`tile-${currentRow * 5 + i}`).textContent);
     }
     const guessWord = guess.join("");
-    if (!words.includes(guessWord)) {
-        alert("Invalid word!");
-        return;
-    }
 
     for (let i = 0; i < 5; i++) {
         const tile = document.getElementById(`tile-${currentRow * 5 + i}`);
         const key = tile.textContent;
+        const keyButton = document.querySelector(`button[data-key="${key}"]`);
         if (answer[i] === key) {
             tile.classList.add("correct");
+            keyButton.classList.add("correct");
         } else if (answer.includes(key)) {
             tile.classList.add("present");
+            keyButton.classList.add("present");
         } else {
             tile.classList.add("absent");
+            keyButton.classList.add("absent");
         }
     }
 
     if (guessWord === answer) {
-        alert("Congratulations! You guessed the word!");
+        displayMessage("Congratulations! You guessed the word!");
         gameActive = false;
+        restartButton.style.display = "block";
         return;
     }
 
@@ -89,15 +90,37 @@ function handleEnterPress() {
     currentTile = 0;
 
     if (currentRow >= 6) {
-        alert(`Game over! The word was: ${answer}`);
+        displayMessage(`Game over! The word was: ${answer}`);
         gameActive = false;
+        restartButton.style.display = "block";
     }
+}
+
+function displayMessage(msg) {
+    message.textContent = msg;
+}
+
+function restartGame() {
+    answer = "tapir";
+    currentRow = 0;
+    currentTile = 0;
+    gameActive = true;
+    message.textContent = "";
+    restartButton.style.display = "none";
+    for (let i = 0; i < 30; i++) {
+        const tile = document.getElementById(`tile-${i}`);
+        tile.textContent = "";
+        tile.classList.remove("correct", "present", "absent");
+    }
+    const keys = document.querySelectorAll(".key");
+    keys.forEach((key) => key.classList.remove("correct", "present", "absent"));
 }
 
 createBoard();
 createKeyboard();
 
 document.addEventListener("keydown", (e) => {
+    if (!gameActive) return;
     if (e.key === "Enter") {
         handleEnterPress();
     } else if (e.key === "Backspace") {
@@ -106,3 +129,5 @@ document.addEventListener("keydown", (e) => {
         handleKeyPress(e.key);
     }
 });
+
+restartButton.addEventListener("click", restartGame);
