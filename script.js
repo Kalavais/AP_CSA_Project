@@ -60,11 +60,7 @@ function handleEnterPress() {
     for (let i = 0; i < 5; i++) {
         guess.push(document.getElementById(`tile-${currentRow * 5 + i}`).textContent);
     }
-    const guessWord = guess.join("");
-    if (!words.includes(guessWord)) {
-        alert("Invalid word!");
-        return;
-    }
+
 
     for (let i = 0; i < 5; i++) {
         const tile = document.getElementById(`tile-${currentRow * 5 + i}`);
