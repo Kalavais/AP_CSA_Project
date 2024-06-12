@@ -8,10 +8,57 @@
 </head>
 <body>
     <div class="container flex flex-col justify-center items-center m-2">
+        <!-- Title -->
+        <h1 class="p-8 text-3xl font-black text-center">Wordle</h1>
+
+        <!-- Instructions -->
+        <div id="instructions" class="p-4 border bg-slate-200 rounded">
+            <p class="font-bold">Guess the Worlde in 6 tries.</p>
+            <ul class="list-disc ml-6">
+                <li>Each guess must be a valid 5-letter word.</li>
+                <li>The color of the tiles will change to show how close your guess was to the word.</li>
+            </ul>
+        </div>
+
         <!-- Game Board -->
         <div id="board" class="container-md p-4">
             <form action="" class="form">
                 <div id="word-1" class="py-1">
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                </div>
+                <div id="word-2" class="py-1">
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                </div>
+                <div id="word-3" class="py-1">
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                </div>
+                <div id="word-4" class="py-1">
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                </div>
+                <div id="word-5" class="py-1">
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                    <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
+                </div>
+                <div id="word-6" class="py-1">
                     <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
                     <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
                     <input id="letter" type="text" class="border-2 w-10 h-10 text-center font-black" disabled>
@@ -25,19 +72,55 @@
         <div id="keyboard" class="flex flex-col justify-center items-center p-4">
             <div id="key-row-1" class="flex flex-row">
                 <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">Q</button>
-                <!-- Add other keyboard buttons -->
+                <button id="key" class="key px-2 mx-.5border rounded bg-slate-400 text-white">W</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">E</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">R</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">T</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">Y</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">U</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">I</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">O</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">P</button>
             </div>
-            <!-- Add other keyboard rows -->
-
-            <!-- Removed submit button and backspace button -->
-
+                
+            <div id="key-row-2" class="flex flex-row">
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">A</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">S</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">D</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">F</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">G</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">H</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">J</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">K</button>
+                <button id="key" class="key px-2 mx-.5 border rounded bg-slate-400 text-white">L</button>
+             </div>
+                
+            <div id="key-row-3" class="flex flex-row">
+                <button id="key" class="px-2 mx-.5 border rounded bg-slate-400 text-white">Z</button>
+                <button id="key" class="px-2 mx-.5 border rounded bg-slate-400 text-white">X</button>
+                <button id="key" class="px-2 mx-.5 border rounded bg-slate-400 text-white">C</button>
+                <button id="key" class="px-2 mx-.5 border rounded bg-slate-400 text-white">V</button>
+                <button id="key" class="px-2 mx-.5 border rounded bg-slate-400 text-white">B</button>
+                <button id="key" class="px-2 mx-.5 border rounded bg-slate-400 text-white">N</button>
+                <button id="key" class="px-2 mx-.5 border rounded bg-slate-400 text-white">M</button>
+            </div>
+            <div id="submit">
+                <button id="key-enter" class="bg-amber-400 px-2 py-1 my-2 border-none rounded text-white">Submit Guess</button>
+                <button id="backspace" class="bg-slate-300 px-2 py-1 border-none rounded text-white">Del</button>
+            </div>       
         </div>
 
         <!-- Game Tracking -->
         <div id="reset-game" class="flex flex-col">
             <div id="score-container" class="container border p-4">
-                <!-- Removed games won and lost display -->
+                <div id="games-won">
+                    <strong>Games Won: 0</strong>
+                </div>
+                <div id="games-lost">
+                    <strong>Games Lost: 0</strong>
+                </div>
             </div>
+            <button id="reset" class="bg-green-400 px-2 py-1 my-2 border-none rounded text-white">Play</button>
         </div>
     </div>
     <script type="module" src="main.js"></script>
